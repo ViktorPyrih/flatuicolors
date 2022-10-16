@@ -1,24 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import pallets from './data/pallete.json';
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import TransitionedHome from "./pages/transitioned/TransitionedHome";
+import TransitionedPalettePage from "./pages/transitioned/TransitionedPalettePage";
 
 function App() {
+  const router = createBrowserRouter([
+      {
+        path: "/",
+        element: (
+            <TransitionedHome/>
+        )
+      },
+      {
+        path: "/palette/:id",
+        element: (
+            <TransitionedPalettePage/>
+        ),
+        loader: ({params}) => {
+            const palletId = params.id;
+            return pallets.filter(pallet => pallet.id === palletId)[0];
+        }
+      }
+  ]);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <RouterProvider router={router}/>
   );
 }
 

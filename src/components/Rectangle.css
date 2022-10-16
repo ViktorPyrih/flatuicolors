@@ -1,0 +1,32 @@
+/* Rectangle style start */
+
+.rectangle {
+    position: relative;
+}
+.rectangle:hover {
+    cursor: pointer;
+}
+.rectangle:hover > .rectangle__link {
+    display: block;
+}
+.rectangle__link {
+    display: none;
+    width: 40%;
+    height: 50%;
+    color: #FFFFFF;
+    border: 2px solid hsla(0,0%,100%,.2);
+    border-radius: 5px;
+}
+.rectangle__link:hover {
+    text-decoration: none;
+}
+.rectangle__text {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    opacity: 0.9;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Rectangle style end */

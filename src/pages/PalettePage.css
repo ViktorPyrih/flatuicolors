@@ -1,0 +1,18 @@
+/* PalettePage style start */
+
+.pallet-page-heading {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: -50px;
+    margin-bottom: 5px;
+    line-height: 45px;
+}
+.pallet-page-content {
+    display: flex;
+    flex-wrap: wrap;
+    height: 400px;
+}
+
+/* PalettePage style end */

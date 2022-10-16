@@ -1,0 +1,12 @@
+/* Home style start */
+
+.img-background {
+    background-image: url("../assets/img/background.svg");
+}
+.pallet-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 51px;
+}
+
+/* Home style end */

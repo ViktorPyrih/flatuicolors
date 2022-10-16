@@ -1,0 +1,12 @@
+/* Option style start */
+
+.option {
+    border: 1px solid #ecf0f1;
+    line-height: 40px;
+}
+.option:hover {
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
+/* Option style end */
