@@ -1,6 +1,7 @@
 import './Transisition.css';
 import {useState} from "react";
 import {MIN_WIDTH, MAX_WIDTH} from "../../data/Constants";
+import executeAsync from "../../utils/executeAsync";
 
 const DURATION_MILLIS = 400;
 
@@ -18,7 +19,7 @@ function Transition({duration = DURATION_MILLIS, reverse = false, redirect = fal
         if (!redirect) {
             setTimeout(() => setInProgress(false), duration);
         }
-        setTimeout(() => setWidth(to), 0);
+        executeAsync(() => setWidth(to));
     }
 
     const style = {width};

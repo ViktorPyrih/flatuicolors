@@ -10,11 +10,16 @@
 .list-container__title {
     background-color: #000000;
     text-align: center;
-    line-height: 34px;
+    line-height: 40px;
     border-radius: 4px;
 }
 .list-container__options {
+    position: absolute;
+    top: 160px;
+    width: 270px;
+    z-index: 100;
     color: #000000;
+    background-color: #FFFFFF;
     border: 1px solid #ecf0f1;
     border-radius: 4px;
 }

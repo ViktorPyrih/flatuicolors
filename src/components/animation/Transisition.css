@@ -1,7 +1,7 @@
 /* Transition style start */
 
 .transition-background {
-    height: 125%;
+    position: fixed;
     z-index: 100;
 }
 
