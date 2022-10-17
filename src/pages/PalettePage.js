@@ -8,8 +8,9 @@ import {useState} from "react";
 import CopySuccess from "../components/CopySuccess";
 import TransitionProvider from "../components/animation/TransitionProvider";
 import OptionList from "../components/OptionList";
+import {rgb, rgba} from "../utils/ColorUtils";
 
-const options = ["HEX (#AA1923)", "HEX (AA1923)"];
+const options = ["HEX (#AA1923)", "HEX (AA1923)", "RGBA - (1,2,3,1.0)", "RGB - (1,2,3)"];
 const ANIMATION_MILLIS = 700;
 
 function PalettePage() {
@@ -21,7 +22,7 @@ function PalettePage() {
 
     if (selectedColor) {
         return (
-            <CopySuccess backgroundColor={selectedColor}/>
+            <CopySuccess color={selectedColor}/>
         );
     }
 
@@ -55,9 +56,9 @@ function PalettePage() {
                         </div>
                         <div className="pallet-page-content">
                             {
-                                pallet.colors.map(color =>
+                                pallet.colors.map((color, i) =>
                                     <Rectangle width="20%" height="25%" backgroundColor={color.color} copy={true}
-                                               onClick={() =>
+                                               key={i} onClick={() =>
                                                    handleColorClick(color.color, selectedColorFormat, soundOn, setSelectedColor)
                                     }>
                                         {color.name}
@@ -73,7 +74,7 @@ function PalettePage() {
     );
 }
 
-function handleColorClick(color, format, soundOn, setAnimationColor) {
+function handleColorClick(color, format, soundOn, setSelectedColor) {
     const formattedColor = formatColor(color, format);
     navigator.clipboard.writeText(formattedColor)
         .then(() => {
@@ -81,17 +82,22 @@ function handleColorClick(color, format, soundOn, setAnimationColor) {
                 new Audio(notifySound).play()
                     .then(() => console.log('Sound finished'));
             }
-            setTimeout(() => setAnimationColor(undefined), ANIMATION_MILLIS);
-            setAnimationColor(color);
+            setTimeout(() => setSelectedColor(undefined), ANIMATION_MILLIS);
+            setSelectedColor({backgroundColor: color, formattedColor});
         });
 }
 
 function formatColor(color, format) {
-    if (format === 1) {
-        return color.substring(1);
+    switch (format) {
+        case 1:
+            return color.substring(1);
+        case 2:
+            return rgba(color.substring(1));
+        case 3:
+            return rgb(color.substring(1));
+        default:
+            return color;
     }
-
-    return color;
 }
 
 export default PalettePage;

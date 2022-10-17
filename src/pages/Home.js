@@ -13,7 +13,7 @@ function Home({pallets}) {
                         <section className="pallet-container wrapper">
                             {
                                 pallets
-                                    .map(pallet => <Palette pallet={pallet}
+                                    .map((pallet, i) => <Palette pallet={pallet} key={i}
                                                             onClick={e => onClick(e, `/palette/${pallet.id}`)}/>)
                             }
                         </section>

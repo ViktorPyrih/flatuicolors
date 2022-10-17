@@ -1,6 +1,6 @@
 import './App.css';
 import pallets from './data/pallete.json';
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import {createBrowserRouter, redirect, RouterProvider} from "react-router-dom";
 import TransitionedHome from "./pages/transitioned/TransitionedHome";
 import TransitionedPalettePage from "./pages/transitioned/TransitionedPalettePage";
 
@@ -21,6 +21,12 @@ function App() {
             const palletId = params.id;
             return pallets.filter(pallet => pallet.id === palletId)[0];
         }
+      },
+      {
+          path: "/*",
+          loader: () => {
+              throw redirect("/");
+          }
       }
   ]);
   return (

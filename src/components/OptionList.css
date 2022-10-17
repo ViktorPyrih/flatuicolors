@@ -10,14 +10,19 @@
 .list-container__title {
     background-color: #000000;
     text-align: center;
-    line-height: 40px;
+    line-height: 44px;
     border-radius: 4px;
 }
-.list-container__options {
+.list-container__title:active {
+    transform: scale(60%);
+}
+.list-container-animation {
     position: absolute;
-    top: 160px;
+    top: 170px;
     width: 270px;
     z-index: 100;
+}
+.list-container__options {
     color: #000000;
     background-color: #FFFFFF;
     border: 1px solid #ecf0f1;

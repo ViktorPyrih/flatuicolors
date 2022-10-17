@@ -108,5 +108,8 @@ a:hover, button:hover {
 .animated_400ms {
     transition: all ease-in-out 400ms;
 }
+.animated_1s {
+    transition: all ease-in-out 1s;
+}
 
 /* Main style end */

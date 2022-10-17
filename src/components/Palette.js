@@ -8,8 +8,8 @@ function Palette({pallet, onClick}) {
             <Link to="#" className="pallet-container-link" onClick={onClick}>
                 <div className="pallet">
                     {
-                        pallet.colors.map(color =>
-                            <Rectangle width="57px" height="38px" backgroundColor={color.color}></Rectangle>
+                        pallet.colors.map((color, i) =>
+                            <Rectangle width="57px" height="38px" backgroundColor={color.color} key={i}></Rectangle>
                         )
                     }
                 </div>

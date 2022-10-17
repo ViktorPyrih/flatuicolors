@@ -1,7 +1,7 @@
 import {useState} from "react";
 import executeAsync from "../../utils/executeAsync";
 
-function Animation({propertyName, from, to, children}) {
+function Animation({propertyName, from, to, className, children}) {
     const [propertyValue, setPropertyValue] = useState(from);
     const style = {[propertyName]: propertyValue};
     if (propertyValue === from) {
@@ -9,7 +9,7 @@ function Animation({propertyName, from, to, children}) {
     }
 
     return (
-        <div style={style}>{children}</div>
+        <div className={className} style={style}>{children}</div>
     );
 }
 
