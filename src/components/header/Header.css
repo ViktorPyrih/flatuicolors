@@ -1,6 +1,5 @@
 .header {
     box-sizing: border-box;
-    padding-top: 36px;
-    height: 96px;
-    margin-bottom: 60px;
+    height: 10vh;
+    line-height: 10vh;
 }
