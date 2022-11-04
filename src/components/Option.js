@@ -1,8 +1,8 @@
 import './Option.css';
 
-function Option({index, onSelect, children}) {
+function Option({value, onSelect, children}) {
     return (
-        <li className="option" onClick={() => onSelect(index)}>
+        <li className="option" onClick={() => onSelect(value)}>
             {children}
         </li>
     );

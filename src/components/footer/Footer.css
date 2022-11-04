@@ -1,5 +1,3 @@
-/* Footer style start */
-
 .footer {
     box-sizing: border-box;
     height: 96px;
@@ -17,5 +15,3 @@
 .footer__info {
     float: right;
 }
-
-/* Footer style end */

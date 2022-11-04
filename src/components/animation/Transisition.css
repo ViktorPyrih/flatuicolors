@@ -1,8 +1,4 @@
-/* Transition style start */
-
 .transition-background {
     position: fixed;
     z-index: 100;
 }
-
-/* Transition style end */

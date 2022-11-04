@@ -19,7 +19,11 @@ function OptionList({title, options, onSelect}) {
                                propertyName="transform" from="scale(0%)" to="scale(100%)">
                         <ul className="list-container__options">
                             {
-                                options.map((option, i) => <Option index={i} key={i} onSelect={onSelect}>{option}</Option>)
+                                Object.entries(options).map(([key, value], i) => (
+                                    <Option value={key} key={i} onSelect={onSelect}>
+                                        {value}
+                                    </Option>
+                                ))
                             }
                         </ul>
                     </Animation>

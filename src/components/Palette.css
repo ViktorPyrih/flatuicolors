@@ -1,5 +1,3 @@
-/* Palette style start */
-
 .pallet {
     width: 287px;
     display: flex;
@@ -31,5 +29,3 @@
     display: inline-block;
     margin-right: 4px;
 }
-
-/* Palette style end */

@@ -10,13 +10,27 @@ import TransitionProvider from "../components/animation/TransitionProvider";
 import OptionList from "../components/OptionList";
 import {rgb, rgba} from "../utils/ColorUtils";
 
-const options = ["HEX (#AA1923)", "HEX (AA1923)", "RGBA - (1,2,3,1.0)", "RGB - (1,2,3)"];
+const SOUND_ON = 'Sound On 🔊';
+const SOUND_OFF = 'Sound Off 🔇';
 const ANIMATION_MILLIS = 700;
+
+const OPTIONS = {
+    default: "HEX (#AA1923)",
+    hex: "HEX (AA1923)",
+    rgba: "RGBA - (1,2,3,1.0)",
+    rgb: "RGB - (1,2,3)",
+};
+const COLOR_FORMAT = {
+    default: 'default',
+    hex: 'hex',
+    rgba: 'rgba',
+    rgb: 'rgb'
+}
 
 function PalettePage() {
     const [soundOn, setSoundOn] = useState(true);
-    const [selectedColor, setSelectedColor] = useState(undefined);
-    const [selectedColorFormat, setSelectedColorFormat] = useState(0);
+    const [selectedColor, setSelectedColor] = useState();
+    const [selectedColorFormat, setSelectedColorFormat] = useState(COLOR_FORMAT.default);
 
     const pallet = useLoaderData();
 
@@ -26,8 +40,8 @@ function PalettePage() {
         );
     }
 
-    const colorFormatTitle = `Copy format: ${options[selectedColorFormat]}`;
-    const soundToggleText = soundOn ? 'Sound On 🔊' : 'Sound Off 🔇';
+    const colorFormatTitle = `Copy format: ${OPTIONS[selectedColorFormat]}`;
+    const soundToggleText = soundOn ? SOUND_ON : SOUND_OFF;
 
     return (
         <TransitionProvider render={
@@ -42,8 +56,8 @@ function PalettePage() {
                                 onClick={e => onClick(e, "/")}>
                                 ← Back
                             </Link>
-                            <OptionList title={colorFormatTitle} options={options}
-                                        onSelect={selectedIndex => setSelectedColorFormat(selectedIndex)}/>
+                            <OptionList title={colorFormatTitle} options={OPTIONS}
+                                        onSelect={selectedFormat => setSelectedColorFormat(selectedFormat)}/>
                             <Link
                                 to="#"
                                 className="link link_color_black pallet-page-heading__toggle"
@@ -89,11 +103,11 @@ function handleColorClick(color, format, soundOn, setSelectedColor) {
 
 function formatColor(color, format) {
     switch (format) {
-        case 1:
+        case COLOR_FORMAT.hex:
             return color.substring(1);
-        case 2:
+        case COLOR_FORMAT.rgba:
             return rgba(color.substring(1));
-        case 3:
+        case COLOR_FORMAT.rgb:
             return rgb(color.substring(1));
         default:
             return color;
