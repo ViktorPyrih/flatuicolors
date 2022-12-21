@@ -1,8 +1,12 @@
 .img-background {
     background-image: url("../assets/img/background.svg");
+    min-height: 100vh;
 }
 .pallet-container {
     display: flex;
     flex-wrap: wrap;
     gap: 51px;
+    padding-top: 3vh;
+    padding-bottom: 13vh;
+    margin: 0 auto;
 }

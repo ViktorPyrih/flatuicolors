@@ -1,16 +1,13 @@
 .footer {
     box-sizing: border-box;
-    height: 96px;
-    padding-top: 36px;
-    line-height: 18px;
-    font-size: 18px;
-    font-weight: 400;
-    margin-top: 60px;
+    height: 10vh;
+    line-height: 10vh;
+    font-size: 12px;
 }
 .footer-layout {
-    height: 100%;
-    background-color: darkblue;
-    opacity: 0.8;
+    position: fixed;
+    top: 90%;
+    width: 100%;
 }
 .footer__info {
     float: right;

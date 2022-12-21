@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 
 function Footer() {
     return (
-        <footer className="layout">
+        <footer className="layout footer-layout">
             <div className="footer wrapper">
                 <Link to="/" className="link logo">FLAT UI COLORS 2</Link>
                 <p className="footer__info">&copy; Powered by Viktor Pyrih, EPAM Software Engineer</p>

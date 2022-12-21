@@ -46,7 +46,7 @@ function PalettePage() {
     return (
         <TransitionProvider render={
             onClick =>
-                <>
+                <div className="pallet-page-container">
                     <Header/>
                     <section className="pallet-page">
                         <div className="pallet-page-heading">
@@ -82,7 +82,7 @@ function PalettePage() {
                         </div>
                     </section>
                     <Footer/>
-                </>
+                </div>
             }>
         </TransitionProvider>
     );

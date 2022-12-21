@@ -8,8 +8,10 @@
 .list-container__title {
     background-color: #000000;
     text-align: center;
-    line-height: 44px;
+    line-height: 7vh;
     border-radius: 4px;
+    margin-top: 0.5vh;
+    margin-bottom: 0.5vh;
 }
 .list-container__title:active {
     transform: scale(60%);

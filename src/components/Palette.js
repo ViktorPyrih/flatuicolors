@@ -9,7 +9,7 @@ function Palette({pallet, onClick}) {
                 <div className="pallet">
                     {
                         pallet.colors.map((color, i) =>
-                            <Rectangle width="57px" height="38px" backgroundColor={color.color} key={i}></Rectangle>
+                            <Rectangle width="62px" height="38px" backgroundColor={color.color} key={i}></Rectangle>
                         )
                     }
                 </div>
